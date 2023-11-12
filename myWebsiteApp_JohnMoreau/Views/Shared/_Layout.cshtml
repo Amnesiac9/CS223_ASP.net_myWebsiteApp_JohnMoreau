@@ -26,16 +26,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link  " asp-area="" asp-controller="Home" asp-action="About">About</a>
+                            <a class="nav-link @(ViewBag.Title == "Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                            <a class="nav-link @(ViewBag.Title == "About" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.Title == "Contact Me" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
                         </li>
                         <li class="nav-item nav-item-right">
-                            <a class="nav-link" asp-area="Help" asp-controller="Home" asp-action="Index">Help</a>
+                            <a class="nav-link @(ViewBag.Title == "Help Page" ? "active" : "")" asp-area="Help" asp-controller="Home" asp-action="Index">Help</a>
                         </li>
                     </ul>
                 </div>
