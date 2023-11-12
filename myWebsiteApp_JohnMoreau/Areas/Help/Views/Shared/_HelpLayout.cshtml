@@ -9,16 +9,16 @@
 }
 <ul class="nav nav-tabs mt-2 mb-3">
     <li class="nav-item">
-        <a class="nav-link" asp-action="Index" asp-controller="Home" asp-area="Help">
+        <a class="nav-link @(ViewBag.Active == "Home" ? "active" : "")" asp-area="Help" asp-controller="Home" asp-action="Index">
             Home
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" asp-action="Index" asp-controller="Tutorial" asp-area="Help">
+        <a class="nav-link @(ViewBag.Active == "Tutorial" ? "active" : "")" asp-area="Help" asp-controller="Tutorial" asp-action="Index" asp-route-id=1>
             Tutorial
         </a>
     </li>
 </ul>
-
+<h3 class="mb-3">@ViewBag.Header</h3>
 @RenderBody()
 

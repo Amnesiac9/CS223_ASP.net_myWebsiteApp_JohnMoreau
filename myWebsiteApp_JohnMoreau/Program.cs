@@ -11,8 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRouting(options => {
-    options.LowercaseUrls = true;
-    options.AppendTrailingSlash = true;
+    //options.LowercaseUrls = true;
+    //options.AppendTrailingSlash = true;
 
 });
 
@@ -38,7 +38,7 @@ app.UseEndpoints(endpoints =>
     endpoints.MapAreaControllerRoute(
         name: "help",
         areaName: "Help",
-        pattern: "Help/{controller=Help}/{action=Index}/{id?}/{slug?}"
+        pattern: "Help/{controller=Help}/{action=Index}/Page{id}"
     );
 
     endpoints.MapControllerRoute(

@@ -9,25 +9,12 @@ namespace myWebsiteApp_JohnMoreau.Areas.Help.Controllers
     public class HomeController : Controller
     {
 
-        [Route("[area]/[controller]/{id?}")]
+        [Route("[area]/[controller]")]
         public IActionResult Index()
         {
-            ViewBag.Title = "Home";
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewBag.Title = "About";
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Phone"] = "555-123-4567";
-            ViewData["Email"] = "me@mywebsite.com";
-            ViewData["Facebook"] = "facebook.com/mywebsite";
-            ViewBag.Title = "Contact";
+            ViewBag.Title = "Help Page";
+            ViewBag.Active = "Home";
+            ViewBag.Header = "Tutorial Home";
             return View();
         }
 

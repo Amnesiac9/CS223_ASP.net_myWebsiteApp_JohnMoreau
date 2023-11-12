@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using myWebsiteApp_JohnMoreau.Models;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -10,30 +11,22 @@ namespace myWebsiteApp_JohnMoreau.Areas.Help.Controllers
     {
 
 
-        [Route("[area]/[controller]s/{id?}")]
-        public IActionResult Index()
+        [Route("[area]/[controller]/[action]/Page{id}")]
+        public IActionResult Index(int id)
         {
-            ViewBag.Title = "Home";
+            ViewBag.Title = "Help Page";
+
+            if (id > 0)
+            {
+                ViewBag.Active = "Tutorial";
+                ViewBag.Header = "Tutorial - Page " + id;
+                return View("Page" + id);
+            }
+
+            ViewBag.Header = "Tutorial Home";
             return View();
+
         }
-
-
-        public IActionResult About()
-        {
-            ViewBag.Title = "About";
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Phone"] = "555-123-4567";
-            ViewData["Email"] = "me@mywebsite.com";
-            ViewData["Facebook"] = "facebook.com/mywebsite";
-            ViewBag.Title = "Contact";
-            return View();
-        }
-
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
