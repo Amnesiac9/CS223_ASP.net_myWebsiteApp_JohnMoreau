@@ -16,3 +16,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.nav-teim-right {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
