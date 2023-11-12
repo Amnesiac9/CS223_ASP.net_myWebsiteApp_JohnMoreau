@@ -1,20 +1,31 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using myWebsiteApp_JohnMoreau.Models;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 
 namespace myWebsiteApp_JohnMoreau.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
         public IActionResult Index()
         {
+            ViewBag.Title = "Home";
+            return View();
+        }
+
+        public IActionResult About()
+        {
+            ViewBag.Title = "About";
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            ViewData["Phone"] = "555-123-4567";
+            ViewData["Email"] = "me@mywebsite.com";
+            ViewData["Facebook"] = "facebook.com/mywebsite";
+            ViewBag.Title = "Contact";
             return View();
         }
 

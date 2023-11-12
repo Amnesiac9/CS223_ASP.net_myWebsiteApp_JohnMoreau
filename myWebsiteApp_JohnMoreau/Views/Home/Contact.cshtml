@@ -1,8 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Contact Me";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Home</h1>
-    <p>Welcome. Please select a menu item.</p>
+<div class="">
+    <ul class="list-group">
+        @foreach (KeyValuePair<string, object?> item in ViewData)
+        {
+            if (item.Key != "Title")
+            {
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-2">@item.Key</div>
+                        <div class="col-4">@item.Value</div>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
 </div>
