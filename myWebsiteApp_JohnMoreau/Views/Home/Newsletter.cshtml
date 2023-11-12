@@ -1,0 +1,46 @@
+﻿@* * John Moreau
+    * CSS233
+    * 11/10/2023
+    Sources - https://getbootstrap.com/docs/4.3/components/forms/
+*@
+<div>
+    @if(ViewBag.Success == true)
+    {
+        <div class="text-center">
+            <h4>Success!</h4>
+            <p>Thank you for signing up for our newsletter!</p>
+            <button class="btn btn-dark">
+                <a class="text-decoration-none text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </button>
+        </div>
+    } else
+    {
+        <p>Signup for our newsletter to get amazing news!</p>
+
+        <form class="container-custom" method="post" asp-controller="Home" asp-action="Newsletter" asp-route-success="true">
+            <div class="form-group mb-3">
+                <label class="form-label" for="name">Your Name</label>
+                <input type="text" class="form-control" id="name" placeholder="John Doe" />
+            </div>
+            <div class="form-group mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="example@email.com" />
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group mb-3">
+                <label class="form-label" for="frequency">Frequency</label>
+                <select class="form-control" id="frequency">
+                    <option>Weekly</option>
+                    <option>Monthly</option>
+                    <option>Every 3 Months</option>
+                    <option>Every 6 Months</option>
+                    <option>Yearly</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-dark text-white mt-3">
+                Submit
+            </button>
+        </form>
+    }
+
+</div>

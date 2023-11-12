@@ -3,6 +3,14 @@ using myWebsiteApp_JohnMoreau.Models;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
+/*
+* John Moreau
+* CSS233
+* 11/10/2023
+* Sources - https://getbootstrap.com/docs/4.3/components/forms/
+*
+*/
+
 namespace myWebsiteApp_JohnMoreau.Controllers
 {
     public class HomeController : Controller
@@ -26,6 +34,17 @@ namespace myWebsiteApp_JohnMoreau.Controllers
             ViewData["Email"] = "me@mywebsite.com";
             ViewData["Facebook"] = "facebook.com/mywebsite";
             ViewBag.Title = "Contact";
+            return View();
+        }
+
+        public IActionResult Newsletter(string success)
+        {
+
+            ViewBag.Title = "Newsletter";
+            if (success != null)
+            {
+                ViewBag.Success = true;
+            }
             return View();
         }
 
